@@ -22,7 +22,7 @@ app.message(/.*<@UC734HMC4>.*/, async ({ say }) => {
   await say(`He is busy.`);
 });
 
-app.message('help', async ({ client }) => {
+app.message('help', async ({ client, message }) => {
   await client.chat.postMessage({
     channel: 'CC6JF4EDN',
     // eslint-disable-next-line
