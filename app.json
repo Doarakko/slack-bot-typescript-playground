@@ -1,0 +1,31 @@
+{
+    "name": "typescript-slack-bot-playground",
+    "description": "typescript Slack bot sample.",
+    "repository": "https://github.com/Doarakko/typescript-slack-bot-playground",
+    "keywords": [
+        "bot",
+        "slack bot",
+        "typescript"
+    ],
+    "env": {
+        "SLACK_APP_TOKEN": {
+            "description": "Enter your slack app token.",
+            "value": "xapp-aaaa"
+        },
+        "SLACK_BOT_TOKEN": {
+            "description": "Enter your slack bot token.",
+            "value": "xoxb-bbbb"
+        }
+    },
+    "buildpacks": [
+        {
+            "url": "https://github.com/heroku/heroku-buildpack-nodejs"
+        }
+    ],
+    "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "free"
+        }
+    }
+}
