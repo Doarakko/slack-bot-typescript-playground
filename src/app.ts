@@ -31,6 +31,15 @@ app.message('help', async ({ client, message }) => {
   });
 });
 
+app.event('reaction_added', async ({ client, payload }) => {
+  await client.chat.postMessage({
+    // eslint-disable-next-line
+    // @ts-ignore payload.item.channel does not exist on type
+    channel: payload.item.channel,
+    text: `:${payload.reaction}:`
+  });
+});
+
 (async () => {
   await app.start();
   console.log('⚡️ Bolt app is running!');
