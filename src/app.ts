@@ -10,6 +10,10 @@ const app = new App({
   socketMode: true
 });
 
+app.message(/.*/, async ({ message }) => {
+  await console.log(message);
+});
+
 app.message('hi', async ({ say }) => {
   await say(`Hello!`);
 });
